@@ -46,7 +46,7 @@ FUNCTIONS = {
     },
     'artist/images' : {
         'get' : [
-            ("id", str, []),
+            ("id", str, ['optional']),
             ("name", str, ['optional']),
             ("results", int, ['optional']),
             ("start", int, ['optional']),
@@ -55,7 +55,7 @@ FUNCTIONS = {
     },
     'artist/news' : {
         'get' : [
-            ("id", str, []),
+            ("id", str, ['optional']),
             ("name", str, ['optional']),
             ("results", int, ['optional']),
             ("start", int, ['optional']),
@@ -257,6 +257,8 @@ class EchoNest( rocket.Rocket ):
     
 
 if __name__ == "__main__":
+    # This is the API key provided in echonest's examples. Might as
+    # well use it here too.
     echo_rocket = EchoNest(api_key='N6E4NIOVYMTHNDM8J')
 
     import pprint
